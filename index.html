@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | FAQ accordion</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+      @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap');
+      :root{
+        --White: hsl(0, 0%, 100%);
+        --Lightpink: hsl(275, 100%, 97%);
+        --Grayishpurple: hsl(292, 16%, 49%);
+        --Darkpurple: hsl(292, 42%, 14%);
+      }
+      body{
+        font-family: 'Work Sans', sans-serif;
+        margin: 0px;
+        padding: 0px;
+        background-image: url(./assets/images/background-pattern.svg);
+        background-size: contain;
+        background-color: var(--Lightpink);
+        background-repeat: no-repeat;
+      }
+      .attribution { font-size: 11px; text-align: center; }
+      .attribution a { color: hsl(228, 45%, 44%); }
+
+      .main-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0px auto;
+          width: 100%;
+          max-width: 713px;
+      }
+      .faq-container {
+        background-color: white;
+        padding: 20px 15px;
+        border-radius: 15px;
+      }
+      .faq-content h1 {
+        font-size: 40px;
+        line-height: 28px;
+        margin-top: 0px!important;
+      }
+      .faq-content  img {
+          vertical-align: middle;
+      }
+      .faq-content span {
+          font-size: 21px;
+          gap: 30px;
+          display: flex;
+          line-height: 30px;
+          justify-content: space-between;
+          max-width: 700px;
+          font-weight: bold;
+      }
+      .faq-content img {
+          vertical-align: middle;
+      }
+      .collaps {
+        color: var(--Grayishpurple);
+          display: none;
+          margin-bottom: 25px;
+          max-width: 500px;
+      }
+      /*.faq-content {
+          border-bottom: 1px solid #00000024;
+      }*/
+      .faq-content span:hover{
+        color: var(--Grayishpurple);
+        cursor: pointer;
+      }
+      .img-change-2{
+        display: none;
+      }
+      .faq-item{
+        margin:10px 0px;
+        border-bottom: 1px solid #00000024;
+      }
+    </style>
+</head>
+<body>
+
+  <div class="main-container">
+        <div class="faq-container">
+          <div class="faq-content">
+            <h1>
+              <img src="./assets/images/icon-star.svg"> FAQs
+            </h1>
+            <div class="faq-item"> <!-- Use a distinct class name -->
+                <div class="faq1">
+                  <span>
+                    What is Frontend Mentor, and how will it help me?
+                    <div class="img-change">
+                      <img src="./assets/images/icon-plus.svg">              
+                    </div>
+                    <div class="img-change-2">
+                      <img src="./assets/images/icon-minus.svg">
+                    </div>
+                  </span>
+                </div>
+                <div class="collaps faq-content"> <!-- Use a distinct class name -->
+                  <p>
+                    Frontend Mentor offers realistic coding challenges to help developers improve their 
+                    frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for 
+                    all levels and ideal for portfolio building.
+                  </p>
+                </div>
+            </div>
+                <div class="faq-item"> <!-- Use a distinct class name -->
+                    <div class="faq2">
+                      <span>
+                        Is Frontend Mentor free?
+                        <div class="img-change">
+                          <img src="./assets/images/icon-plus.svg">              
+                        </div>
+                        <div class="img-change-2">
+                          <img src="./assets/images/icon-minus.svg">
+                        </div>
+                      </span>
+                    </div>
+                    <div class="collaps faq-content"> 
+                      <p>
+                        Yes, Frontend Mentor offers both free and premium coding challenges, with the free 
+                        option providing access to a range of projects suitable for all skill levels.
+                      </p>
+                    </div>
+                </div>
+                <div class="faq-item"> <!-- Use a distinct class name -->
+                    <div class="faq3">
+                      <span>
+                        Can I use Frontend Mentor projects in my portfolio?
+                        <div class="img-change">
+                          <img src="./assets/images/icon-plus.svg">              
+                        </div>
+                        <div class="img-change-2">
+                          <img src="./assets/images/icon-minus.svg">
+                        </div>
+                      </span>
+                    </div>
+                    <div class="collaps faq-content"> 
+                      <p>
+                        Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent
+                          way to showcase your skills to potential employers!
+                      </p>
+                    </div>
+                </div>
+                <div class="faq-item"> <!-- Use a distinct class name -->
+                    <div class="faq4">
+                      <span>
+                        How can I get help if I'm stuck on a Frontend Mentor challenge?
+                        <div class="img-change">
+                          <img src="./assets/images/icon-plus.svg">              
+                        </div>
+                        <div class="img-change-2">
+                          <img src="./assets/images/icon-minus.svg">
+                        </div>
+                      </span>
+                    </div>
+                    <div class="collaps faq-content"> 
+                      <p>
+                        The best place to get help is inside Frontend Mentor's Discord community. There's a help 
+                  channel where you can ask questions and seek support from other community members.
+                      </p>
+                    </div>
+                </div>
+            <!-- Add more .faq-item blocks for additional accordions -->
+          </div>
+        </div>
+      </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+    jQuery(document).ready(function () {
+          jQuery(".faq-item span").on('click', function () {
+            jQuery(this).closest('.faq-item').find('.collaps').toggle();
+            jQuery(this).closest('.faq-item').find('.img-change').toggle();
+            jQuery(this).closest('.faq-item').find('.img-change-2').toggle();
+          })
+        })
+  </script>
+  <!-- FAQs
+
+  What is Frontend Mentor, and how will it help me?
+
+  Frontend Mentor offers realistic coding challenges to help developers improve their 
+  frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for 
+  all levels and ideal for portfolio building.
+
+  Is Frontend Mentor free?
+
+  Yes, Frontend Mentor offers both free and premium coding challenges, with the free 
+  option providing access to a range of projects suitable for all skill levels.
+
+  Can I use Frontend Mentor projects in my portfolio?
+
+  Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent
+  way to showcase your skills to potential employers!
+
+  How can I get help if I'm stuck on a Frontend Mentor challenge?
+  
+  The best place to get help is inside Frontend Mentor's Discord community. There's a help 
+  channel where you can ask questions and seek support from other community members. -->
+
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+</html>
